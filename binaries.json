@@ -1,0 +1,15 @@
+{
+    "n64-ido": {
+        "py/object": "__main__.BinaryType",
+        "name": "n64-ido",
+        "extension": [
+            ".N64",
+            ".NDD"
+        ],
+        "regexPatternString": {
+            "py/b64": "W1xzXFNdW1xzXFNdW1xzXFNdCAAAAABbXHNcU11bXHNcU11bXHNcU10IAAAAAA=="
+        },
+        "overlapped": false,
+        "patternDescription": "double instances of jr instructions followed by nops"
+    }
+}

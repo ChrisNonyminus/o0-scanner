@@ -2,6 +2,7 @@ import os
 import platform
 import regex as re
 import argparse
+import jsonpickle
 
 parser = argparse.ArgumentParser()
 
@@ -12,8 +13,10 @@ parser.add_argument(
     "-t",
     "--type",
     required=True,
-    help='Type of binary file to scan.',
+    help="Type of binary file to scan.",
 )
+
+parser.add_argument("-j", "--json", help="Json file defining binary types.")
 args = parser.parse_args()
 
 # print(args.directory)
@@ -42,6 +45,9 @@ class BinaryType:
 
 
 binaryTypes: dict[str, BinaryType] = {}
+
+if args.json:
+    binaryTypes = jsonpickle.decode(open(args.json, "rt").read())
 
 binaryTypes["n64-ido"] = BinaryType(
     name="n64-ido",
